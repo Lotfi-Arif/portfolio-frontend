@@ -13,7 +13,7 @@
   background: radial-gradient(
     circle,
     rgba(29, 78, 216, 0.4) 0%,
-    rgba(29, 78, 216, 0.2) 0%,
+    rgba(29, 78, 216, 0.2) 30%,
     rgba(29, 78, 216, 0) 70%
   );
   transform: translate(-50%, -50%);
@@ -26,15 +26,17 @@
   background-color: #0a192f;
   color: #ccd6f6;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
   position: fixed;
   height: 100%;
+  width: 50%; /* Ensure sidebar takes up the left half */
 }
 
 .sidebarContent {
   text-align: center;
   padding: 20px;
+  width: 100%; /* Ensures content is centered within the sidebar */
 }
 
 .name {
@@ -64,14 +66,14 @@
         color: #8892b0;
         text-decoration: none;
         font-size: 1.2rem;
-        transition: color 0.3s;
+        transition: color 0.5s;
 
         &.active {
-          color: #64ffda; // Highlight color
+          color: #64ffda;
         }
 
         &:hover {
-          color: #64ffda; // Highlight color
+          color: #64ffda;
         }
       }
     }
@@ -88,6 +90,6 @@
   color: #ccd6f6;
 
   section {
-    margin-bottom: 100px; // Add some margin to simulate content height
+    margin-bottom: 100px;
   }
 }

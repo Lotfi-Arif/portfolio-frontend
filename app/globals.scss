@@ -1,3 +1,5 @@
+@import "./variables";
+
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +9,8 @@
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
-  background-color: #0a192f;
-  color: #ccd6f6;
+  background-color: $primary-color;
+  color: $secondary-color;
 }
 
 a {
