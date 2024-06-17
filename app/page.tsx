@@ -90,7 +90,7 @@ const Home: React.FC = () => {
         <p>
           Backend Engineer with 3+ years of experience in optimizing scalable
           systems using Node.js, NestJS, Docker, and MySQL. Demonstrated success
-          in enhancing system performance by up to 30%, improving reliability
+          in enhancing system performance, improving reliability
           and security. Expert in API development, data processing, and
           mentoring junior developers. Eager to drive backend development
           success in dynamic environments.
