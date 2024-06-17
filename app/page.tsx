@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Layout from "./components/Layout";
 import styles from "./page.module.scss";
@@ -9,6 +10,7 @@ import {
   faTwitter,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import Image from "next/image";
 
 const experiences = [
   {
@@ -43,28 +45,40 @@ const experiences = [
 const contacts = [
   {
     icon: faEnvelope,
-    link: "mailto:your.email@example.com",
-    text: "your.email@example.com",
+    link: "mailto:lotfiarif11@gmail.com",
+    text: "lotfiarif11@gmail.com",
   },
   {
     icon: faGithub,
-    link: "https://github.com/yourusername",
-    text: "github.com/yourusername",
+    link: "https://github.com/Lotfi-Arif",
+    text: "github.com/Lotfi-Arif",
   },
   {
     icon: faLinkedin,
-    link: "https://linkedin.com/in/yourusername",
-    text: "linkedin.com/in/yourusername",
+    link: "https://linkedin.com/in/lotfiarif",
+    text: "linkedin.com/in/lotfiarif",
   },
   {
     icon: faTwitter,
-    link: "https://twitter.com/yourusername",
-    text: "twitter.com/yourusername",
+    link: "https://twitter.com/lotfiarif",
+    text: "twitter.com/lotfiarif",
   },
   {
     icon: faInstagram,
-    link: "https://instagram.com/yourusername",
-    text: "instagram.com/yourusername",
+    link: "https://instagram.com/lotfiarif1",
+    text: "instagram.com/lotfiarif1",
+  },
+];
+
+const projects = [
+  {
+    title: "Example Project",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus et nunc ultricies lacinia. Donec nec nunc nec nunc ultricies lacinia. Donec nec nunc nec nunc ultricies lacinia.",
+    link: "https://example.com",
+    githubStar: 100,
+    imageSrc: "/example.png",
+    technologies: ["React", "Express", "Spotify API", "Heroku"],
   },
 ];
 
@@ -94,8 +108,10 @@ const Home: React.FC = () => {
               className={styles.card}
             >
               <div className={styles.cardContent}>
-                <span className={styles.duration}>{exp.duration}</span>
-                <h3>{exp.company}</h3>
+                <div className={styles.roleDuration}>
+                  <h3>{exp.company}</h3>
+                  <span className={styles.duration}>{exp.duration}</span>
+                </div>
                 <h4>{exp.role}</h4>
                 <p>{exp.description}</p>
                 <div className={styles.tags}>
@@ -112,7 +128,47 @@ const Home: React.FC = () => {
       </section>
       <section id="projects" className={styles.section}>
         <h2>Projects</h2>
-        <p>Your projects section content goes here.</p>
+        <div className={styles.cardsContainer}>
+          {projects.map((project, index) => (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={index}
+              className={styles.project}
+            >
+              <Image
+                src={project.imageSrc}
+                width={1920}
+                height={1080}
+                alt={project.title}
+                className={styles.projectImage}
+              />
+              <div className={styles.projectContent}>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.githubLink}
+                  >
+                    <FontAwesomeIcon icon={faGithub} className={styles.icon} />
+                    <span>{project.githubStar}</span>
+                  </a>
+                )}
+                <div className={styles.tags}>
+                  {project.technologies.map((tech, idx) => (
+                    <span key={idx} className={styles.tag}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
       </section>
       <section id="contact" className={styles.section}>
         <h2>Contact</h2>
@@ -125,7 +181,7 @@ const Home: React.FC = () => {
               key={index}
               className={styles.contactCard}
             >
-              <FontAwesomeIcon icon={contact.icon} size="sm" />
+              <FontAwesomeIcon icon={contact.icon} className={styles.icon} />
               <span>{contact.text}</span>
             </a>
           ))}
