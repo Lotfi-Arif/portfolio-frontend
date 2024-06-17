@@ -25,8 +25,8 @@ This is my personal portfolio website, built to showcase my projects, experience
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/portfolio-website.git
-   cd portfolio-website
+   git clone git@github.com:Lotfi-Arif/portfolio-frontend.git
+   cd portfolio-frontend
    ```
 
 2. **Install dependencies:**
