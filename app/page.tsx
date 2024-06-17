@@ -18,7 +18,7 @@ const experiences = [
     role: "Backend Engineer",
     duration: "Oct 2022 - Present",
     description:
-      "Optimized and refactored backend services using NestJS, improving system performance by 30% and reducing processing times by 20%. Developed and implemented 30 new API endpoints using TypeScript and TsRest, expanding system functionality by 25%. Enhanced error handling mechanisms in services and controllers, implementing comprehensive logging and monitoring, improving system reliability by 15%.",
+      "Optimized and refactored backend services using NestJS, improving system performance and reducing processing times. Developed and implemented 30 new API endpoints using TypeScript and TsRest, expanding system functionality. Enhanced error handling mechanisms in services and controllers, implementing comprehensive logging and monitoring, improving system reliability",
     link: "https://ninetailed.io",
     tags: ["NestJS", "TypeScript", "TsRest", "Docker", "MySQL"],
   },
@@ -27,7 +27,7 @@ const experiences = [
     role: "Fullstack Engineer Intern",
     duration: "Oct 2022 - Feb 2023",
     description:
-      "Migrated the FOX asset management system from vanilla JavaScript to React, improving performance by 30% and enhancing user experience. Set up Docker environments for both frontend and backend development, streamlining the development process and improving deployment efficiency by 30%. Utilized React Redux and Redux Toolkit for state management, improving organization and maintainability by 20%.",
+      "Migrated the FOX asset management system from vanilla JavaScript to React, improving performance and enhancing user experience. Set up Docker environments for both frontend and backend development, streamlining the development process and improving deployment efficiency. Utilized React Redux and Redux Toolkit for state management, improving organization and maintainability.",
     link: "https://infinitywave.com",
     tags: ["React", "Redux", "Docker", "MySQL", "Node.js"],
   },
@@ -36,7 +36,7 @@ const experiences = [
     role: "Junior Web Developer",
     duration: "May 2021 - Aug 2022",
     description:
-      "Conducted comprehensive code reviews for team members, ensuring adherence to best practices, maintaining high standards of code quality, and reducing code errors by 20%. Automated testing processes using Jest and Cypress, increasing test coverage by 25% and reducing manual testing by 30%. Mentored junior developers, providing guidance and support, resulting in a 20% improvement in their coding skills and productivity.",
+      "Conducted comprehensive code reviews for team members, ensuring adherence to best practices, maintaining high standards of code quality, and reducing code errors. Automated testing processes using Jest and Cypress, increasing test coverage and reducing manual testing. Mentored junior developers, providing guidance and support, resulting in an improvement in their coding skills and productivity.",
     link: "https://scandiweb.com",
     tags: ["Jest", "Cypress", "Git", "CI/CD", "REST API"],
   },
@@ -72,10 +72,10 @@ const contacts = [
 
 const projects = [
   {
-    title: "Example Project",
+    title: "Personal Portfolio (Current)",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus et nunc ultricies lacinia. Donec nec nunc nec nunc ultricies lacinia. Donec nec nunc nec nunc ultricies lacinia.",
-    link: "https://example.com",
+    link: "https://lotfiarif.com",
     githubStars: 100,
     imageSrc: "/example.png",
     technologies: ["React", "Express", "Spotify API", "Heroku"],
