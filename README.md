@@ -69,6 +69,3 @@ My contact information, including email, GitHub, LinkedIn, Twitter, and Instagra
 
 Feel free to fork this repository, make improvements, and submit a pull request. Any contributions are greatly appreciated!
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
