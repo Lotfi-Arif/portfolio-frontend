@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio Website
 
-## Getting Started
+![Portfolio Screenshot](./public/page.png)
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This is my personal portfolio website, built to showcase my projects, experience, and contact information. The website is built using modern web technologies and follows responsive design principles to ensure it looks great on all devices.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Responsive Design:** The layout adjusts beautifully across various screen sizes.
+- **Dynamic Content:** Sections like Experience and Projects are dynamically rendered.
+- **Interactive UI:** Hover effects and transitions for a smooth user experience.
+- **Accessibility:** Accessible design practices to ensure usability for everyone.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Built With
 
-## Learn More
+- **React:** JavaScript library for building user interfaces.
+- **Next.js:** React framework for server-side rendering and static site generation.
+- **Sass:** CSS preprocessor for writing maintainable styles.
+- **FontAwesome:** Icon library for beautiful icons.
 
-To learn more about Next.js, take a look at the following resources:
+## How to Use
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone the repository:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```bash
+   git clone https://github.com/yourusername/portfolio-website.git
+   cd portfolio-website
+   ```
 
-## Deploy on Vercel
+2. **Install dependencies:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   yarn
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. **Run the development server:**
+
+   ```bash
+   yarn run dev
+   ```
+
+4. **Build for production:**
+   ```bash
+   yarn run build
+   yarn start
+   ```
+
+## Sections
+
+### About
+
+A brief introduction about me, my skills, and my professional journey.
+
+### Experience
+
+A list of my work experiences with detailed descriptions, roles, and durations. The cards are interactive, displaying more information on hover.
+
+### Projects
+
+Showcase of my projects with images, descriptions, and technologies used. Each project card links to the project details or GitHub repository.
+
+### Contact
+
+My contact information, including email, GitHub, LinkedIn, Twitter, and Instagram. Each contact card includes an icon and a link.
+
+## Contributing
+
+Feel free to fork this repository, make improvements, and submit a pull request. Any contributions are greatly appreciated!
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

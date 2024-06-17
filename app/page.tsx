@@ -76,7 +76,7 @@ const projects = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus et nunc ultricies lacinia. Donec nec nunc nec nunc ultricies lacinia. Donec nec nunc nec nunc ultricies lacinia.",
     link: "https://example.com",
-    githubStar: 100,
+    githubStars: 100,
     imageSrc: "/example.png",
     technologies: ["React", "Express", "Spotify API", "Heroku"],
   },
@@ -130,34 +130,17 @@ const Home: React.FC = () => {
         <h2>Projects</h2>
         <div className={styles.cardsContainer}>
           {projects.map((project, index) => (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={index}
-              className={styles.project}
-            >
+            <div key={index} className={styles.project}>
               <Image
                 src={project.imageSrc}
+                alt={project.title}
                 width={1920}
                 height={1080}
-                alt={project.title}
                 className={styles.projectImage}
               />
               <div className={styles.projectContent}>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.githubLink}
-                  >
-                    <FontAwesomeIcon icon={faGithub} className={styles.icon} />
-                    <span>{project.githubStar}</span>
-                  </a>
-                )}
                 <div className={styles.tags}>
                   {project.technologies.map((tech, idx) => (
                     <span key={idx} className={styles.tag}>
@@ -165,8 +148,17 @@ const Home: React.FC = () => {
                     </span>
                   ))}
                 </div>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.githubLink}
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                  {project.githubStars && <span>{project.githubStars}</span>}
+                </a>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </section>

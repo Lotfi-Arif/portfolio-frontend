@@ -5,6 +5,11 @@
   height: 100vh;
   width: 100%;
   position: relative;
+  flex-direction: column; // Default to column for smaller screens
+
+  @media (min-width: 768px) {
+    flex-direction: row; // Change to row for larger screens
+  }
 }
 
 .cursorLight {
@@ -24,20 +29,25 @@
 }
 
 .sidebar {
-  flex: 0 0 50%;
   background-color: #0a192f;
   color: #ccd6f6;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  height: 100%;
-  width: 50%;
+  height: auto; // Change to auto for smaller screens
+  width: 100%; // Full width for smaller screens
+  padding: 1rem;
+
+  @media (min-width: 768px) {
+    flex: 0 0 50%;
+    position: fixed;
+    height: 100%;
+    width: 50%; // Half width for larger screens
+  }
 }
 
 .sidebarContent {
   text-align: center;
-  padding: 20px;
   width: 100%;
 }
 
@@ -84,9 +94,13 @@
 
 .mainContent {
   flex: 1;
-  margin-left: 50%;
   padding: 2rem;
-  overflow-y: auto;
-  height: 100vh;
+  overflow-y: visible;
+  height: auto;
   color: #ccd6f6;
+
+  @media (min-width: 768px) {
+    margin-left: 50%; // Margin for larger screens
+    height: 100vh; // Full height for larger screens
+  }
 }
