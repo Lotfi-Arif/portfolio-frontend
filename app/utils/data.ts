@@ -108,12 +108,20 @@ export const contacts = [
 
 export const projects = [
   {
-    title: "Personal Portfolio (Current)",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus et nunc ultricies lacinia. Donec nec nunc nec nunc ultricies lacinia. Donec nec nunc nec nunc ultricies lacinia.",
-    link: "https://lotfiarif.com",
-    githubStars: 100,
+    title: "Personal Portfolio",
+    description: "My previous portfolio but I wanted to make it simpler",
+    link: "https://github.com/Lotfi-Arif/personal-portfolio",
+    githubStars: 0,
     imageSrc: "/example.png",
     technologies: ["React", "Express", "Spotify API", "Heroku"],
+  },
+  {
+    title: "Billiards System",
+    description:
+      "A project I built to test electron and IoT stuff with arduino",
+    link: "https://github.com/Lotfi-Arif/billiards-system",
+    githubStars: 0,
+    imageSrc: "/billiards.png",
+    technologies: ["Electron", "Python", "Arduino", "WebSocket", "React"],
   },
 ];

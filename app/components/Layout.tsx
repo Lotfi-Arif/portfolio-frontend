@@ -58,8 +58,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <div className={styles.sidebar}>
         <div className={styles.sidebarContent}>
           <h1 className={styles.name}>Lotfi Anwar L Arif</h1>
-          <h2 className={styles.title}>Backend Engineer</h2>
-          <p className={styles.oneliner}>I build things for the web.</p>
+          <h2 className={styles.title}>Fullstack Engineer</h2>
+          <p className={styles.oneliner}>I like blazingly fast stuff⚡</p>
           <nav className={styles.navbar}>
             <ul>
               {sections.map((section, index) => {
