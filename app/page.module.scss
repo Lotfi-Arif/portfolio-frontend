@@ -1,268 +1,284 @@
 @import "./variables";
 
 .section {
-  margin-bottom: 50px;
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 2.5rem 0 3rem;
+    border-top: 1px solid rgba($secondary-color, 0.08);
 
-  h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-
-  p {
-    font-size: 1.2rem;
-  }
-}
-
-.cardsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.card {
-  display: block;
-  padding: 1.5rem;
-  color: $secondary-color;
-  background-color: $background-color;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-  position: relative;
-
-  &:hover {
-    background-color: darken($background-color, 10%);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    filter: brightness(1);
-
-    .cardContent {
-      filter: brightness(1);
+    &:first-of-type {
+        border-top: none;
+        padding-top: 0;
     }
-  }
 
-  .cardContent {
+    h2 {
+        font-size: clamp(2rem, 3vw, 2.5rem);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #f8fbff;
+        margin-bottom: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        &::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba($secondary-color, 0.15);
+        }
+    }
+
+    > p {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: rgba($secondary-color, 0.9);
+    }
+}
+
+.experienceList {
     display: flex;
     flex-direction: column;
-
-    h3 {
-      font-size: 1.75rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .roleDuration {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-
-      h4 {
-        font-size: 1.25rem;
-        margin-bottom: 0;
-        color: lighten($secondary-color, 20%);
-      }
-
-      .duration {
-        font-size: 0.875rem;
-        color: lighten($secondary-color, 20%);
-      }
-    }
-
-    p {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-
-      .tag {
-        background-color: darken($background-color, 10%);
-        color: $highlight-color;
-        padding: 0.25rem 0.75rem;
-        border-radius: 0.25rem;
-        font-size: 0.875rem;
-      }
-    }
-  }
-
-  .duration {
-    top: 0.75rem;
-    right: 0.75rem;
-    font-size: 0.875rem;
-    color: lighten($secondary-color, 20%);
-  }
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
-.card:not(:hover) {
-  filter: brightness(0.7);
+.experienceItem {
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba($secondary-color, 0.08);
+
+    &:first-of-type {
+        border-top: none;
+        padding-top: 0;
+    }
+}
+
+.experienceHeader {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+
+    h3 {
+        font-size: 1.35rem;
+        margin-bottom: 0.15rem;
+    }
+}
+
+.companyLink {
+    font-size: 1rem;
+    color: $highlight-color;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.duration {
+    font-size: 0.85rem;
+    color: rgba($secondary-color, 0.65);
+    font-family: "Space Mono", monospace;
+}
+
+.experienceBullets {
+    list-style: none;
+    padding-left: 1.25rem;
+    margin-bottom: 0.75rem;
+
+    li {
+        position: relative;
+        margin-bottom: 0.35rem;
+        color: rgba($secondary-color, 0.9);
+        line-height: 1.7;
+
+        &::before {
+            content: "•";
+            position: absolute;
+            left: -1.25rem;
+            color: $highlight-color;
+        }
+    }
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.tag {
+    background-color: rgba($primary-color, 0.75);
+    color: $highlight-color;
+    padding: 0.3rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
 }
 
 .contactsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
 }
 
 .contactCard {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba($highlight-color, 0.15);
+    background: rgba($primary-color, 0.85);
+    transition:
+        border-color 0.3s ease,
+        transform 0.3s ease;
 
-  &:hover {
-    background-color: darken($background-color, 10%);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  }
+    &:hover {
+        transform: translateY(-2px);
+        border-color: rgba($highlight-color, 0.45);
+    }
 
-  .icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 0.75rem;
-  }
+    .icon {
+        width: 1.35rem;
+        height: 1.35rem;
+        color: $highlight-color;
+    }
 
-  span {
-    font-size: 1rem;
-    color: $secondary-color;
-  }
+    span {
+        font-size: 0.95rem;
+        color: rgba($secondary-color, 0.9);
+    }
+}
+
+.cardsContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+
+    @media (min-width: 900px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .project {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.75rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba($highlight-color, 0.12);
+    background: rgba($background-color, 0.85);
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 
-  &:hover {
-    background-color: darken($background-color, 10%);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  }
-
-  .projectImage {
-    width: 70%;
-    height: auto;
-    border-radius: 0.5rem;
-  }
-
-  .projectContent {
-    display: flex;
-    flex-direction: column;
-
-    h3 {
-      font-size: 1.75rem;
-      margin-bottom: 0.5rem;
+    &:hover {
+        transform: translateY(-4px);
+        border-color: rgba($highlight-color, 0.35);
+        box-shadow: 0 20px 45px rgba(2, 12, 27, 0.55);
     }
 
-    p {
-      font-size: 1rem;
-      margin-bottom: 1rem;
+    @media (min-width: 900px) {
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+        align-items: stretch;
     }
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-
-      .tag {
-        background-color: darken($background-color, 10%);
-        color: $highlight-color;
-        padding: 0.25rem 0.75rem;
-        border-radius: 0.25rem;
-        font-size: 0.875rem;
-      }
+    .projectImage {
+        width: 100%;
+        height: auto;
+        border-radius: 0.6rem;
+        object-fit: cover;
+        filter: saturate(0.9);
+        border: 1px solid rgba($highlight-color, 0.12);
     }
 
-    .githubLink {
-      display: flex;
-      align-items: center;
-      font-size: 1rem;
-      color: $secondary-color;
+    .projectContent {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
 
-      svg {
-        margin-right: 0.25rem;
-      }
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: rgba($secondary-color, 0.92);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+
+            .tag {
+                background-color: rgba($primary-color, 0.8);
+                color: $highlight-color;
+                padding: 0.25rem 0.65rem;
+                border-radius: 999px;
+                font-size: 0.75rem;
+            }
+        }
+
+        .githubLink {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            width: fit-content;
+            margin-top: 0.25rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 999px;
+            border: 1px solid rgba($highlight-color, 0.3);
+            color: $highlight-color;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+
+            &:hover {
+                background: rgba($highlight-color, 0.1);
+            }
+
+            svg {
+                margin-right: 0.1rem;
+            }
+        }
     }
-  }
 }
 
-// Responsive styles
 @media (max-width: 768px) {
-  .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-    padding: 1rem;
-  }
+    .section {
+        padding: 2rem 0 2.5rem;
 
-  .mainContent {
-    margin-left: 0;
-    padding: 1rem;
-  }
+        h2 {
+            flex-direction: column;
+            align-items: flex-start;
+
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+
+    .cardsContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .project {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 480px) {
-  .sidebarContent {
-    padding: 5px;
-  }
-
-  .name {
-    font-size: 1.5rem;
-  }
-
-  .title {
-    font-size: 1rem;
-  }
-
-  .oneliner {
-    font-size: 0.875rem;
-  }
-
-  .navbar {
-    ul {
-      li {
-        a {
-          font-size: 0.875rem;
-        }
-      }
-    }
-  }
-
-  .card {
-    .cardContent {
-      h3 {
-        font-size: 1rem;
-      }
-
-      h4 {
-        font-size: 0.75rem;
-      }
-
-      p {
-        font-size: 0.625rem;
-      }
+    .project {
+        padding: 1.25rem;
     }
 
-    .duration {
-      font-size: 0.625rem;
+    .contactCard {
+        flex-direction: column;
+        align-items: flex-start;
     }
-  }
-
-  .project {
-    .projectContent {
-      h3 {
-        font-size: 1rem;
-      }
-
-      p {
-        font-size: 0.525rem;
-      }
-    }
-
-    .githubLink {
-      font-size: 0.625rem;
-    }
-  }
 }

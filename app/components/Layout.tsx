@@ -62,16 +62,28 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <p className={styles.oneliner}>I build things for the web.</p>
           <nav className={styles.navbar}>
             <ul>
-              {sections.map((section) => (
-                <li key={section}>
-                  <a
-                    href={`#${section}`}
-                    className={activeSection === section ? styles.active : ""}
-                  >
-                    {section.charAt(0).toUpperCase() + section.slice(1)}
-                  </a>
-                </li>
-              ))}
+              {sections.map((section, index) => {
+                const label =
+                  section.charAt(0).toUpperCase() + section.slice(1);
+                const linkClass = `${styles.navLink} ${
+                  activeSection === section ? styles.active : ""
+                }`;
+
+                return (
+                  <li key={section}>
+                    <a href={`#${section}`} className={linkClass}>
+                      <span className={styles.navIndex}>
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className={styles.navLabel}>{label}</span>
+                      <span
+                        className={styles.navIndicator}
+                        aria-hidden="true"
+                      />
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         </div>

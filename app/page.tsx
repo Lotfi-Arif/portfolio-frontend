@@ -1,86 +1,11 @@
 "use client";
 import React from "react";
-import Layout from "./components/Layout";
-import styles from "./page.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import {
-  faGithub,
-  faLinkedin,
-  faTwitter,
-  faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
-
-const experiences = [
-  {
-    company: "Ninetailed",
-    role: "Backend Engineer",
-    duration: "Oct 2022 - Present",
-    description:
-      "Optimized and refactored backend services using NestJS, improving system performance and reducing processing times. Developed and implemented 30 new API endpoints using TypeScript and TsRest, expanding system functionality. Enhanced error handling mechanisms in services and controllers, implementing comprehensive logging and monitoring, improving system reliability",
-    link: "https://ninetailed.io",
-    tags: ["NestJS", "TypeScript", "TsRest", "Docker", "MySQL"],
-  },
-  {
-    company: "Infinity Wave",
-    role: "Fullstack Engineer Intern",
-    duration: "Oct 2022 - Feb 2023",
-    description:
-      "Migrated the FOX asset management system from vanilla JavaScript to React, improving performance and enhancing user experience. Set up Docker environments for both frontend and backend development, streamlining the development process and improving deployment efficiency. Utilized React Redux and Redux Toolkit for state management, improving organization and maintainability.",
-    link: "https://infinitywave.com",
-    tags: ["React", "Redux", "Docker", "MySQL", "Node.js"],
-  },
-  {
-    company: "Scandiweb",
-    role: "Junior Web Developer",
-    duration: "May 2021 - Aug 2022",
-    description:
-      "Conducted comprehensive code reviews for team members, ensuring adherence to best practices, maintaining high standards of code quality, and reducing code errors. Automated testing processes using Jest and Cypress, increasing test coverage and reducing manual testing. Mentored junior developers, providing guidance and support, resulting in an improvement in their coding skills and productivity.",
-    link: "https://scandiweb.com",
-    tags: ["Jest", "Cypress", "Git", "CI/CD", "REST API"],
-  },
-];
-
-const contacts = [
-  {
-    icon: faEnvelope,
-    link: "mailto:lotfiarif11@gmail.com",
-    text: "lotfiarif11@gmail.com",
-  },
-  {
-    icon: faGithub,
-    link: "https://github.com/Lotfi-Arif",
-    text: "github.com/Lotfi-Arif",
-  },
-  {
-    icon: faLinkedin,
-    link: "https://linkedin.com/in/lotfiarif",
-    text: "linkedin.com/in/lotfiarif",
-  },
-  {
-    icon: faTwitter,
-    link: "https://twitter.com/lotfiarif",
-    text: "twitter.com/lotfiarif",
-  },
-  {
-    icon: faInstagram,
-    link: "https://instagram.com/lotfiarif1",
-    text: "instagram.com/lotfiarif1",
-  },
-];
-
-const projects = [
-  {
-    title: "Personal Portfolio (Current)",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus et nunc ultricies lacinia. Donec nec nunc nec nunc ultricies lacinia. Donec nec nunc nec nunc ultricies lacinia.",
-    link: "https://lotfiarif.com",
-    githubStars: 100,
-    imageSrc: "/example.png",
-    technologies: ["React", "Express", "Spotify API", "Heroku"],
-  },
-];
+import styles from "./page.module.scss";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import Layout from "./components/Layout";
+import { experiences, projects, contacts } from "./utils/data";
 
 const Home: React.FC = () => {
   return (
@@ -88,41 +13,45 @@ const Home: React.FC = () => {
       <section id="about" className={styles.section}>
         <h2>About</h2>
         <p>
-          Backend Engineer with 3+ years of experience in optimizing scalable
-          systems using Node.js, NestJS, Docker, and MySQL. Demonstrated success
-          in enhancing system performance, improving reliability
-          and security. Expert in API development, data processing, and
-          mentoring junior developers. Eager to drive backend development
-          success in dynamic environments.
+          I’m a full‑stack engineer who enjoys pairing with product teams to
+          build thoughtful web experiences. Most days you’ll find me shipping
+          TypeScript, React, and NestJS, sprinkling in edge runtimes when it
+          makes things zippier. I care about kind feedback loops, reliable
+          deploys, and writing docs teammates can actually use.
         </p>
       </section>
       <section id="experience" className={styles.section}>
         <h2>Experience</h2>
-        <div className={styles.cardsContainer}>
+        <div className={styles.experienceList}>
           {experiences.map((exp, index) => (
-            <a
-              href={exp.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={index}
-              className={styles.card}
-            >
-              <div className={styles.cardContent}>
-                <div className={styles.roleDuration}>
-                  <h3>{exp.company}</h3>
-                  <span className={styles.duration}>{exp.duration}</span>
+            <article key={index} className={styles.experienceItem}>
+              <header className={styles.experienceHeader}>
+                <div>
+                  <h3>{exp.role}</h3>
+                  <a
+                    href={exp.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.companyLink}
+                  >
+                    {exp.company}
+                  </a>
                 </div>
-                <h4>{exp.role}</h4>
-                <p>{exp.description}</p>
-                <div className={styles.tags}>
-                  {exp.tags.map((tag, idx) => (
-                    <span key={idx} className={styles.tag}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <span className={styles.duration}>{exp.duration}</span>
+              </header>
+              <ul className={styles.experienceBullets}>
+                {exp.highlights.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+              <div className={styles.tags}>
+                {exp.tags.map((tag, idx) => (
+                  <span key={idx} className={styles.tag}>
+                    {tag}
+                  </span>
+                ))}
               </div>
-            </a>
+            </article>
           ))}
         </div>
       </section>
