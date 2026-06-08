@@ -102,7 +102,7 @@ const Home: React.FC = () => {
       <section id="contact" className={styles.section}>
         <h2 data-index="04">Contact</h2>
         <p className={styles.lead}>
-          I&apos;m open to senior full-stack roles in Berlin and remote across
+          I&apos;m open to full-stack roles in Berlin and remote across
           Germany. If you&apos;re building something interesting, I&apos;d love
           to hear about it.
         </p>

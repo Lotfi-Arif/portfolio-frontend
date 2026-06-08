@@ -4,7 +4,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 export const experiences = [
   {
     company: "Contentful",
-    role: "Software Engineer, Full-Stack",
+    role: "Software Engineer III, Full-Stack",
     duration: "May 2025 – Present",
     highlights: [
       "Built a new React web SDK from initial scaffolding to release: provider and context components, hooks, the core personalization component, and live content updates during the render lifecycle.",
@@ -36,7 +36,7 @@ export const experiences = [
       "Refactored NestJS services to reduce latency and improve reliability under load.",
       "Built edge logic on Cloudflare Workers and event processing on AWS Lambda.",
       "Hardened third-party data integrations, including a fix for a customer-facing crash caused by malformed upstream data.",
-      "Progressed from Junior to Backend Engineer and supported the platform's transition through Contentful's acquisition.",
+      "Grew from Junior (Software Engineer I) to Software Engineer III while supporting the platform's transition through Contentful's acquisition.",
     ],
     link: "https://ninetailed.io",
     tags: [

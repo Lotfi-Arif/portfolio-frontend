@@ -80,7 +80,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
           <span className={styles.badge}>
             <span className={styles.dot} aria-hidden="true" />
-            Open to senior roles
+            Open to new roles
           </span>
 
           <nav className={styles.navbar} aria-label="Section navigation">
