@@ -6,11 +6,21 @@
   box-sizing: border-box;
 }
 
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Inter", sans-serif;
-  line-height: 1.6;
-  background-color: $primary-color;
-  color: $secondary-color;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  line-height: 1.65;
+  background-color: $bg;
+  color: $ink;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -19,7 +29,25 @@ a {
 }
 
 html,
-body,
-#__next {
+body {
   height: 100%;
+}
+
+::selection {
+  background: rgba($accent, 0.28);
+  color: $ink-bright;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }

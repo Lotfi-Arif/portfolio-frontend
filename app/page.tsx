@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import styles from "./page.module.scss";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Layout from "./components/Layout";
 import { experiences, projects, contacts } from "./utils/data";
 
@@ -11,23 +12,27 @@ const Home: React.FC = () => {
   return (
     <Layout>
       <section id="about" className={styles.section}>
-        <h2>About</h2>
-        <p>
-          I’m a full‑stack engineer who enjoys pairing with product teams to
-          build thoughtful web experiences. Most days you’ll find me shipping
-          TypeScript, React, and NestJS, sprinkling in edge runtimes when it
-          makes things zippier. I care about kind feedback loops, reliable
-          deploys, and writing docs teammates can actually use.
+        <h2 data-index="01">About</h2>
+        <p className={styles.lead}>
+          I&apos;m a full-stack engineer with 5+ years building customer-facing
+          web products and the platforms behind them. Most recently I built a
+          content-personalization <strong>React and Next.js SDK</strong> from
+          scratch and shipped it to production. I&apos;m comfortable across the
+          stack, from React frontends to Node and NestJS APIs and the cloud
+          infrastructure underneath, and I like owning features end to end:
+          design, delivery, and the on-call afterwards.
         </p>
       </section>
+
       <section id="experience" className={styles.section}>
-        <h2>Experience</h2>
+        <h2 data-index="02">Experience</h2>
         <div className={styles.experienceList}>
           {experiences.map((exp, index) => (
             <article key={index} className={styles.experienceItem}>
               <header className={styles.experienceHeader}>
-                <div>
-                  <h3>{exp.role}</h3>
+                <h3>
+                  {exp.role}
+                  <span className={styles.at}> · </span>
                   <a
                     href={exp.link}
                     target="_blank"
@@ -36,7 +41,7 @@ const Home: React.FC = () => {
                   >
                     {exp.company}
                   </a>
-                </div>
+                </h3>
                 <span className={styles.duration}>{exp.duration}</span>
               </header>
               <ul className={styles.experienceBullets}>
@@ -55,11 +60,18 @@ const Home: React.FC = () => {
           ))}
         </div>
       </section>
+
       <section id="projects" className={styles.section}>
-        <h2>Projects</h2>
+        <h2 data-index="03">Projects</h2>
         <div className={styles.cardsContainer}>
           {projects.map((project, index) => (
-            <div key={index} className={styles.project}>
+            <a
+              key={index}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.project}
+            >
               <Image
                 src={project.imageSrc}
                 alt={project.title}
@@ -77,22 +89,23 @@ const Home: React.FC = () => {
                     </span>
                   ))}
                 </div>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.githubLink}
-                >
+                <span className={styles.repoLink}>
                   <FontAwesomeIcon icon={faGithub} />
-                  {project.githubStars && <span>{project.githubStars}</span>}
-                </a>
+                  View source
+                </span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>
+
       <section id="contact" className={styles.section}>
-        <h2>Contact</h2>
+        <h2 data-index="04">Contact</h2>
+        <p className={styles.lead}>
+          I&apos;m open to senior full-stack roles in Berlin and remote across
+          Germany. If you&apos;re building something interesting, I&apos;d love
+          to hear about it.
+        </p>
         <div className={styles.contactsContainer}>
           {contacts.map((contact, index) => (
             <a
@@ -104,6 +117,7 @@ const Home: React.FC = () => {
             >
               <FontAwesomeIcon icon={contact.icon} className={styles.icon} />
               <span>{contact.text}</span>
+              <FontAwesomeIcon icon={faArrowRight} className={styles.arrow} />
             </a>
           ))}
         </div>

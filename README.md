@@ -32,19 +32,19 @@ This is my personal portfolio website, built to showcase my projects, experience
 2. **Install dependencies:**
 
    ```bash
-   yarn
+   pnpm install
    ```
 
 3. **Run the development server:**
 
    ```bash
-   yarn run dev
+   pnpm dev
    ```
 
 4. **Build for production:**
    ```bash
-   yarn run build
-   yarn start
+   pnpm build
+   pnpm start
    ```
 
 ## Sections
